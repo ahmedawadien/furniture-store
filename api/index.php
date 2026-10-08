@@ -1522,7 +1522,7 @@ MAIN
 
             <!-- BENEFITS -->
 
-<div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5 mt-6">
+<div class="grid grid-cols-2 mx-auto md:grid-cols-3 gap-3 sm:gap-4 md:gap-5 mt-6">
 
     <!-- Safe Delivery -->
     <div
@@ -1706,7 +1706,7 @@ MAIN
 
     <!-- Handmade -->
     <div
-        class="modern-benefit-card h-fit group relative overflow-hidden
+        class="modern-benefit-card  h-fit group relative overflow-hidden
                bg-white rounded-[28px]
                border border-slate-200/80
                px-6 pt-4
