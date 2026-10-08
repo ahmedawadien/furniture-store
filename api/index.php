@@ -1967,12 +1967,13 @@ MAIN
 
 
                     <div
-                        class="benefit-card benefit-item rounded-xl sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
+                        class="benefit-card benefit-item rounded-xl justify-center sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
                     >
 
-                        <i
-                            class="bi bi-lock text-brand-700 text-xs sm:text-sm"
-                        ></i>
+                        <img
+    src="../assets/icons/lock-outline.svg"
+    class="w-5 h-5 mx-auto object-contain"
+/>
 
                         <div
                             class="mt-2 text-[9px] sm:text-[10px] font-black text-slate-800"
