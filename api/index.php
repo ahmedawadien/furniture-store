@@ -4,7 +4,7 @@
 |  PRODUCT DATA
 ========================================================= */
 
-$productName     = "أريكة مخملية فاخرة";
+$productName     = "أريكة فاخرة";
 $productPrice    = 12500;
 $productOldPrice = 15000;
 $productSaving   = $productOldPrice - $productPrice;
