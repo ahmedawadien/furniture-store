@@ -532,10 +532,12 @@ $gallery = [
     .benefits-grid > :last-child {
         grid-column: 1 / -1;
         justify-self: center;
-        width: calc(50% - 0.25rem);
+        width: 50% ;
     }
 }
-
+@media (max-width :376px) {
+    
+}
         /* =====================================================
         IMAGE TOP CONTROLS
         ====================================================== */
@@ -1008,16 +1010,6 @@ $gallery = [
                     34px !important;
 
             }
-
-
-            .benefits-grid {
-
-                grid-template-columns:
-                    1fr !important;
-
-            }
-
-
             .benefit-item {
 
                 display:
@@ -1703,19 +1695,22 @@ MAIN
 
     </div>
 
-
-    <!-- Handmade -->
-    <div
-        class="modern-benefit-card  h-fit group relative overflow-hidden
-               bg-white rounded-[28px]
-               border border-slate-200/80
-               px-6 pt-4
-               text-center
-               shadow-[0_12px_35px_rgba(15,23,42,.05)]
-               transition-all duration-500
-               hover:-translate-y-2
-               hover:shadow-[0_25px_60px_rgba(61,36,18,.12)]"
-    >
+<div 
+    class="modern-benefit-card 
+           col-span-2 md:col-span-1 
+           justify-self-center 
+           w-[calc(50%-0.375rem)] 
+           md:w-full
+           h-fit group relative overflow-hidden 
+           bg-white rounded-[28px] 
+           border border-slate-200/80 
+           px-6 pt-4 
+           text-center 
+           shadow-[0_12px_35px_rgba(15,23,42,.05)] 
+           transition-all duration-500 
+           hover:-translate-y-2 
+           hover:shadow-[0_25px_60px_rgba(61,36,18,.12)]"
+>
 
         <!-- Decorative bottom shape -->
         <div
@@ -1827,7 +1822,8 @@ MAIN
 
                         <span
                             class="text-[10px] sm:text-xs font-bold text-brand-700"
-                        >
+ 
+                            >
                             أثاث فاخر
                         </span>
 
@@ -2137,8 +2133,7 @@ MAIN
 
                 <!-- BENEFITS -->
 
-                <div class="benefits-grid grid mx-auto grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 mt-5">
-
+<div class="benefits-grid grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 mt-5">
     <!-- Warranty -->
     <div
         class="benefit-card group relative overflow-hidden rounded-2xl sm:rounded-3xl
