@@ -107,19 +107,19 @@ $gallery = [
 
 
     <!-- =====================================================
-    TAILWIND CSS
+    TAILWIND
     ====================================================== -->
 
     <script src="https://cdn.tailwindcss.com"></script>
 
 
     <!-- =====================================================
-    FONT AWESOME
+    BOOTSTRAP ICONS
     ====================================================== -->
 
     <link
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
 
 
@@ -182,6 +182,9 @@ $gallery = [
 
     <style>
 
+        /* =====================================================
+        YOUR EXISTING ARABIC FONT
+        ====================================================== */
 
         @font-face {
 
@@ -189,7 +192,7 @@ $gallery = [
 
             src:
                 url("assets/fonts/ArabicUIDisplay.otf")
-                format("truetype");
+                format("opentype");
 
             font-weight: 400;
 
@@ -198,6 +201,11 @@ $gallery = [
             font-display: swap;
 
         }
+
+
+        /* =====================================================
+        RESET
+        ====================================================== */
 
         *,
         *::before,
@@ -233,18 +241,23 @@ $gallery = [
             background:
 
                 radial-gradient(
-                    circle at 8% 0%,
-                    rgba(231,213,181,.30),
-                    transparent 27%
+                    circle at 5% 0%,
+                    rgba(231,213,181,.35),
+                    transparent 28%
                 ),
 
                 radial-gradient(
-                    circle at 95% 20%,
-                    rgba(226,232,240,.40),
-                    transparent 25%
+                    circle at 96% 16%,
+                    rgba(226,232,240,.50),
+                    transparent 28%
                 ),
 
-                #f8f8f6;
+                linear-gradient(
+                    180deg,
+                    #fafaf8 0%,
+                    #f7f7f5 45%,
+                    #f8f8f6 100%
+                );
 
             color: #172033;
 
@@ -339,25 +352,72 @@ $gallery = [
 
 
         /* =====================================================
+        BOOTSTRAP ICON ALIGNMENT
+        ====================================================== */
+
+        .bi {
+
+            line-height: 1;
+
+            display: inline-block;
+
+            vertical-align: -.125em;
+
+        }
+
+
+        /* =====================================================
         GLASS NAVBAR
         ====================================================== */
 
         .glass {
 
             background:
-                rgba(255,255,255,.86);
+                rgba(255,255,255,.78);
 
             backdrop-filter:
-                blur(20px);
+                blur(24px)
+                saturate(150%);
 
             -webkit-backdrop-filter:
-                blur(20px);
+                blur(24px)
+                saturate(150%);
 
         }
 
 
         /* =====================================================
-        PRODUCT CARD
+        NAVBAR
+        ====================================================== */
+
+        .modern-header {
+
+            box-shadow:
+                0 1px 0 rgba(15,23,42,.04);
+
+        }
+
+
+        .nav-action {
+
+            transition:
+                transform .2s ease,
+                background .2s ease,
+                color .2s ease;
+
+        }
+
+
+        .nav-action:hover {
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =====================================================
+        PRODUCT AREA
         ====================================================== */
 
         .product-card {
@@ -366,19 +426,27 @@ $gallery = [
 
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,.99),
-                    rgba(250,248,244,.96)
+                    rgba(255,255,255,.98),
+                    rgba(250,248,244,.94)
                 );
+
+            box-shadow:
+                0 30px 90px
+                rgba(61,36,18,.08);
 
         }
 
 
         /* =====================================================
-        MAIN GALLERY
-        NO BACKGROUND
-        NO CARD
-        NO SHADOW
+        MODERN GALLERY
         ====================================================== */
+
+        .gallery-wrapper {
+
+            position: relative;
+
+        }
+
 
         .gallery-container {
 
@@ -386,7 +454,7 @@ $gallery = [
 
             width: 100%;
 
-            min-height: 520px;
+            min-height: 580px;
 
             display: flex;
 
@@ -396,22 +464,62 @@ $gallery = [
 
             overflow: hidden;
 
-            background: transparent !important;
+            background:
 
-            border: none !important;
+                radial-gradient(
+                    circle at center,
+                    rgba(255,255,255,.98),
+                    rgba(247,246,242,.65)
+                );
 
-            box-shadow: none !important;
+            border:
+                1px solid
+                rgba(226,232,240,.72);
+
+            border-radius:
+                34px;
+
+            box-shadow:
+                0 30px 90px
+                rgba(15,23,42,.06);
+
+        }
+
+
+        .gallery-container::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+
+            height: 420px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(231,213,181,.22);
+
+            filter:
+                blur(70px);
+
+            pointer-events: none;
 
         }
 
 
         .gallery-image {
 
-            width: 86%;
+            position: relative;
 
-            height: 86%;
+            z-index: 2;
 
-            max-width: 720px;
+            width: 88%;
+
+            height: 88%;
+
+            max-width: 760px;
 
             max-height: 620px;
 
@@ -430,7 +538,7 @@ $gallery = [
             background: transparent;
 
             transition:
-                transform .5s ease,
+                transform .55s cubic-bezier(.22,.61,.36,1),
                 opacity .3s ease;
 
         }
@@ -444,12 +552,34 @@ $gallery = [
         }
 
 
-        .gallery-container::before,
-        .gallery-container::after {
+        /* =====================================================
+        IMAGE TOP CONTROLS
+        ====================================================== */
 
-            display: none !important;
+        .gallery-floating {
 
-            content: none !important;
+            box-shadow:
+                0 15px 40px
+                rgba(15,23,42,.08);
+
+        }
+
+
+        .favorite-button {
+
+            transition:
+                transform .2s ease,
+                background .2s ease,
+                color .2s ease;
+
+        }
+
+
+        .favorite-button:hover {
+
+            transform:
+                translateY(-2px)
+                scale(1.03);
 
         }
 
@@ -458,14 +588,38 @@ $gallery = [
         THUMBNAILS
         ====================================================== */
 
+        .thumb-btn {
+
+            position: relative;
+
+            transition:
+                transform .25s ease,
+                border-color .25s ease,
+                box-shadow .25s ease;
+
+        }
+
+
+        .thumb-btn:hover {
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
         .thumb-active {
 
             border-color:
                 #956029 !important;
 
             box-shadow:
-                0 8px 24px
-                rgba(149,96,41,.16);
+
+                0 0 0 3px
+                rgba(149,96,41,.10),
+
+                0 14px 32px
+                rgba(149,96,41,.14);
 
         }
 
@@ -474,11 +628,135 @@ $gallery = [
         COLOR SWATCH
         ====================================================== */
 
+        .swatch-btn {
+
+            box-shadow:
+                0 7px 20px
+                rgba(15,23,42,.10);
+
+        }
+
+
         .swatch-active {
 
             box-shadow:
+
                 0 0 0 3px #fff,
-                0 0 0 5px #956029;
+
+                0 0 0 5px #956029,
+
+                0 8px 25px
+                rgba(149,96,41,.18);
+
+        }
+
+
+        /* =====================================================
+        QUANTITY
+        ====================================================== */
+
+        .quantity-button {
+
+            transition:
+                transform .18s ease,
+                background .18s ease;
+
+        }
+
+
+        .quantity-button:hover {
+
+            transform:
+                translateY(-1px);
+
+        }
+
+
+        .quantity-button:active {
+
+            transform:
+                scale(.9);
+
+        }
+
+
+        /* =====================================================
+        SHINE BUTTON
+        ====================================================== */
+
+        .shine-button {
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .shine-button::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: -120%;
+
+            width: 70%;
+
+            height: 100%;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.28),
+                    transparent
+                );
+
+            transform:
+                skewX(-18deg);
+
+            transition:
+                left .65s ease;
+
+        }
+
+
+        .shine-button:hover::after {
+
+            left: 140%;
+
+        }
+
+
+        /* =====================================================
+        INFO CARDS
+        ====================================================== */
+
+        .benefit-card {
+
+            transition:
+                transform .25s ease,
+                border-color .25s ease,
+                box-shadow .25s ease;
+
+        }
+
+
+        .benefit-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(201,155,88,.35);
+
+            box-shadow:
+                0 18px 40px
+                rgba(15,23,42,.07);
 
         }
 
@@ -529,150 +807,6 @@ $gallery = [
 
 
         /* =====================================================
-        MOBILE BUY BAR
-        ====================================================== */
-
-        .mobile-buy-bar {
-
-            transform:
-                translateY(120%);
-
-            transition:
-                transform .35s
-                cubic-bezier(.22,.61,.36,1);
-
-        }
-
-
-        .mobile-buy-bar.visible {
-
-            transform:
-                translateY(0);
-
-        }
-
-
-        /* =====================================================
-        SHINE BUTTON
-        ====================================================== */
-
-        .shine-button {
-
-            position: relative;
-
-            overflow: hidden;
-
-        }
-
-
-        .shine-button::after {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-
-            left: -120%;
-
-            width: 70%;
-
-            height: 100%;
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255,255,255,.25),
-                    transparent
-                );
-
-            transform:
-                skewX(-18deg);
-
-            transition:
-                left .65s ease;
-
-        }
-
-
-        .shine-button:hover::after {
-
-            left: 140%;
-
-        }
-
-
-        /* =====================================================
-        FADE ANIMATION
-        ====================================================== */
-
-        .fade-up {
-
-            opacity: 0;
-
-            transform:
-                translateY(24px);
-
-            animation:
-                fadeUp .7s ease forwards;
-
-        }
-
-
-        .delay-1 {
-
-            animation-delay:
-                .1s;
-
-        }
-
-
-        @keyframes fadeUp {
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-
-            }
-
-        }
-
-
-        /* =====================================================
-        QUANTITY
-        ====================================================== */
-
-        .quantity-button {
-
-            transition:
-                transform .18s ease,
-                background .18s ease;
-
-        }
-
-
-        .quantity-button:hover {
-
-            transform:
-                translateY(-1px);
-
-        }
-
-
-        .quantity-button:active {
-
-            transform:
-                scale(.9);
-
-        }
-
-
-        /* =====================================================
         IMAGE VIEWER
         ====================================================== */
 
@@ -716,7 +850,70 @@ $gallery = [
 
 
         /* =====================================================
-        MOBILE
+        FADE
+        ====================================================== */
+
+        .fade-up {
+
+            opacity: 0;
+
+            transform:
+                translateY(24px);
+
+            animation:
+                fadeUp .7s ease forwards;
+
+        }
+
+
+        .delay-1 {
+
+            animation-delay:
+                .1s;
+
+        }
+
+
+        @keyframes fadeUp {
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* =====================================================
+        MOBILE BUY BAR
+        ====================================================== */
+
+        .mobile-buy-bar {
+
+            transform:
+                translateY(120%);
+
+            transition:
+                transform .35s
+                cubic-bezier(.22,.61,.36,1);
+
+        }
+
+
+        .mobile-buy-bar.visible {
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* =====================================================
+        SMALL PHONES
         ====================================================== */
 
         @media (max-width: 767px) {
@@ -734,29 +931,30 @@ $gallery = [
 
             .gallery-container {
 
-                min-height: 390px;
+                min-height:
+                    410px;
 
-                padding: 10px;
+                border-radius:
+                    25px;
 
             }
 
 
             .gallery-image {
 
-                width: 92%;
+                width:
+                    92%;
 
-                height: 92%;
+                height:
+                    92%;
 
-                max-height: 390px;
+                max-height:
+                    390px;
 
             }
 
         }
 
-
-        /* =====================================================
-        SMALL PHONES
-        ====================================================== */
 
         @media (max-width: 374px) {
 
@@ -785,7 +983,7 @@ $gallery = [
             .gallery-container {
 
                 min-height:
-                    340px;
+                    350px;
 
             }
 
@@ -903,7 +1101,7 @@ $gallery = [
             .gallery-container {
 
                 min-height:
-                    560px;
+                    600px;
 
             }
 
@@ -940,7 +1138,7 @@ $gallery = [
             .gallery-container {
 
                 min-height:
-                    580px;
+                    620px;
 
             }
 
@@ -979,7 +1177,7 @@ $gallery = [
             .gallery-container {
 
                 min-height:
-                    620px;
+                    680px;
 
             }
 
@@ -998,7 +1196,7 @@ HEADER
 ========================================================== -->
 
 <header
-    class="sticky top-0 z-[80] border-b border-slate-200/60 glass"
+    class="modern-header sticky top-0 z-[80] border-b border-slate-200/60 glass"
 >
 
     <div
@@ -1009,16 +1207,18 @@ HEADER
             class="h-[68px] sm:h-[76px] flex items-center justify-between gap-3"
         >
 
+            <!-- LOGO -->
+
             <a
                 href="#"
                 class="flex items-center gap-2 sm:gap-3 min-w-0"
             >
 
                 <div
-                    class="w-10 h-10 sm:w-11 sm:h-11 flex-none rounded-xl sm:rounded-2xl bg-brand-50 border border-brand-200/70 flex items-center justify-center text-brand-700"
+                    class="w-10 h-10 sm:w-11 sm:h-11 flex-none rounded-xl sm:rounded-2xl bg-brand-50 border border-brand-200/70 flex items-center justify-center text-brand-700 shadow-sm"
                 >
 
-                    <i class="fa-solid fa-couch"></i>
+                    <i class="bi bi-house-door text-lg"></i>
 
                 </div>
 
@@ -1028,13 +1228,18 @@ HEADER
                     <div
                         class="text-[18px] sm:text-[21px] font-black text-slate-950 leading-none"
                     >
+
                         صنعة
+
                     </div>
+
 
                     <div
                         class="text-[8px] sm:text-[10px] text-brand-700 font-bold mt-1 whitespace-nowrap"
                     >
+
                         عام الحرف اليدوية
+
                     </div>
 
                 </div>
@@ -1086,10 +1291,10 @@ HEADER
                 <button
                     type="button"
                     aria-label="البحث"
-                    class="hidden sm:flex w-10 h-10 rounded-full items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-brand-700 transition"
+                    class="nav-action hidden sm:flex w-10 h-10 rounded-full items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-brand-700 transition"
                 >
 
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="bi bi-search"></i>
 
                 </button>
 
@@ -1097,10 +1302,10 @@ HEADER
                 <button
                     type="button"
                     aria-label="المفضلة"
-                    class="hidden sm:flex w-10 h-10 rounded-full items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-rose-500 transition"
+                    class="nav-action hidden sm:flex w-10 h-10 rounded-full items-center justify-center text-slate-600 hover:bg-rose-50 hover:text-rose-500 transition"
                 >
 
-                    <i class="fa-regular fa-heart"></i>
+                    <i class="bi bi-heart"></i>
 
                 </button>
 
@@ -1109,16 +1314,19 @@ HEADER
                     type="button"
                     onclick="openCart()"
                     aria-label="السلة"
-                    class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-700 hover:bg-brand-50 hover:text-brand-700 transition"
+                    class="nav-action relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-700 hover:bg-brand-50 hover:text-brand-700 transition"
                 >
 
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <i class="bi bi-bag text-lg"></i>
+
 
                     <span
                         id="cart-count"
                         class="absolute -top-0.5 -right-0.5 min-w-[19px] h-[19px] px-1 rounded-full bg-brand-700 text-white text-[9px] font-black flex items-center justify-center border-2 border-white"
                     >
+
                         0
+
                     </span>
 
                 </button>
@@ -1151,7 +1359,9 @@ BREADCRUMB
             الرئيسية
         </a>
 
-        <i class="fa-solid fa-chevron-left text-[7px]"></i>
+
+        <i class="bi bi-chevron-left text-[7px]"></i>
+
 
         <a
             href="#"
@@ -1160,9 +1370,13 @@ BREADCRUMB
             الأثاث
         </a>
 
-        <i class="fa-solid fa-chevron-left text-[7px]"></i>
 
-        <span class="text-slate-700 font-bold truncate">
+        <i class="bi bi-chevron-left text-[7px]"></i>
+
+
+        <span
+            class="text-slate-700 font-bold truncate"
+        >
 
             <?= htmlspecialchars($productName) ?>
 
@@ -1192,91 +1406,98 @@ MAIN
 
         <section class="fade-up min-w-0">
 
-            <div class="gallery-container">
+            <div class="gallery-wrapper">
 
-                <img
-                    id="main-sofa-img"
-                    src="<?= htmlspecialchars($images['emerald']) ?>"
-                    alt="<?= htmlspecialchars($productName) ?>"
-                    class="gallery-image"
-                    loading="eager"
-                >
+                <div class="gallery-container">
 
-
-                <!-- COLOR BADGE + FAVORITE -->
-
-                <div
-                    class="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex items-start justify-between gap-2 pointer-events-none"
-                >
-
-                    <div
-                        class="pointer-events-auto max-w-[70%] px-3 sm:px-4 py-2 rounded-full bg-white/90 backdrop-blur-xl border border-white/70 shadow-soft flex items-center gap-2"
+                    <img
+                        id="main-sofa-img"
+                        src="<?= htmlspecialchars($images['emerald']) ?>"
+                        alt="<?= htmlspecialchars($productName) ?>"
+                        class="gallery-image"
+                        loading="eager"
                     >
 
-                        <span
-                            class="w-2 h-2 rounded-full bg-emerald-500"
-                        ></span>
 
-                        <span
-                            id="badge-color"
-                            class="text-[10px] sm:text-xs font-bold text-slate-800 truncate"
+                    <!-- COLOR BADGE + FAVORITE -->
+
+                    <div
+                        class="absolute z-10 top-3 sm:top-5 left-3 sm:left-5 right-3 sm:right-5 flex items-start justify-between gap-2 pointer-events-none"
+                    >
+
+                        <div
+                            class="gallery-floating pointer-events-auto max-w-[70%] px-3 sm:px-4 py-2 rounded-full bg-white/90 backdrop-blur-xl border border-white/80 flex items-center gap-2"
                         >
-                            أخضر زمردي
-                        </span>
+
+                            <span
+                                class="w-2 h-2 rounded-full bg-emerald-500"
+                            ></span>
+
+
+                            <span
+                                id="badge-color"
+                                class="text-[10px] sm:text-xs font-bold text-slate-800 truncate"
+                            >
+
+                                أخضر زمردي
+
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            onclick="toggleFavorite(this)"
+                            aria-label="إضافة للمفضلة"
+                            class="favorite-button pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/90 backdrop-blur-xl border border-white/80 flex items-center justify-center text-slate-700 hover:text-rose-500 shadow-soft"
+                        >
+
+                            <i class="bi bi-heart"></i>
+
+                        </button>
 
                     </div>
 
 
-                    <button
-                        type="button"
-                        onclick="toggleFavorite(this)"
-                        aria-label="إضافة للمفضلة"
-                        class="pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/90 backdrop-blur-xl border border-white/70 shadow-soft flex items-center justify-center text-slate-700 hover:text-rose-500 transition"
-                    >
-
-                        <i class="fa-regular fa-heart"></i>
-
-                    </button>
-
-                </div>
-
-
-                <!-- IMAGE CONTROLS -->
-
-                <div
-                    class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex items-end justify-between gap-2"
-                >
+                    <!-- IMAGE CONTROLS -->
 
                     <div
-                        class="px-3 py-1.5 rounded-full bg-black/45 backdrop-blur-md text-white text-[9px] sm:text-[11px] font-bold"
+                        class="absolute z-10 bottom-3 sm:bottom-5 left-3 sm:left-5 right-3 sm:right-5 flex items-end justify-between gap-2"
                     >
 
-                        <span id="image-index">
-                            01
-                        </span>
+                        <div
+                            class="px-3 py-1.5 rounded-full bg-slate-950/65 backdrop-blur-md text-white text-[9px] sm:text-[11px] font-bold"
+                        >
 
-                        <span class="opacity-50 mx-1">
-                            /
-                        </span>
+                            <span id="image-index">
+                                01
+                            </span>
 
-                        <span>
-                            04
-                        </span>
+                            <span class="opacity-50 mx-1">
+                                /
+                            </span>
+
+                            <span>
+                                04
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            onclick="openImageViewer()"
+                            class="h-9 sm:h-10 px-3 sm:px-4 rounded-full bg-white/90 backdrop-blur-xl text-slate-800 text-[9px] sm:text-xs font-bold flex items-center gap-2 shadow-soft hover:bg-white transition"
+                        >
+
+                            <i class="bi bi-arrows-fullscreen"></i>
+
+                            تكبير الصورة
+
+                        </button>
 
                     </div>
-
-
-                    <button
-                        type="button"
-                        onclick="openImageViewer()"
-                        class="h-9 sm:h-10 px-3 sm:px-4 rounded-full bg-white/90 backdrop-blur-xl text-slate-800 text-[9px] sm:text-xs font-bold flex items-center gap-2 shadow-soft hover:bg-white transition"
-                    >
-
-                        <i class="fa-solid fa-expand"></i>
-
-                        تكبير الصورة
-
-                    </button>
 
                 </div>
 
@@ -1322,11 +1543,11 @@ MAIN
             >
 
                 <div
-                    class="bg-white rounded-2xl border border-slate-200/70 p-4"
+                    class="benefit-card bg-white rounded-2xl border border-slate-200/70 p-4"
                 >
 
                     <i
-                        class="fa-solid fa-truck-fast text-brand-600"
+                        class="bi bi-truck text-brand-600 text-lg"
                     ></i>
 
                     <div class="mt-3">
@@ -1349,11 +1570,11 @@ MAIN
 
 
                 <div
-                    class="bg-white rounded-2xl border border-slate-200/70 p-4"
+                    class="benefit-card bg-white rounded-2xl border border-slate-200/70 p-4"
                 >
 
                     <i
-                        class="fa-solid fa-shield-halved text-brand-600"
+                        class="bi bi-shield-check text-brand-600 text-lg"
                     ></i>
 
                     <div class="mt-3">
@@ -1376,11 +1597,11 @@ MAIN
 
 
                 <div
-                    class="bg-white rounded-2xl border border-slate-200/70 p-4"
+                    class="benefit-card bg-white rounded-2xl border border-slate-200/70 p-4"
                 >
 
                     <i
-                        class="fa-solid fa-hand-sparkles text-brand-600"
+                        class="bi bi-stars text-brand-600 text-lg"
                     ></i>
 
                     <div class="mt-3">
@@ -1415,12 +1636,16 @@ MAIN
         >
 
             <div
-                class="product-card rounded-[24px] sm:rounded-[30px] border border-slate-200/70 p-4 sm:p-6 lg:p-7 shadow-luxury"
+                class="product-card rounded-[24px] sm:rounded-[30px] border border-slate-200/70 p-4 sm:p-6 lg:p-7"
             >
 
-                <div class="flex items-center justify-between gap-3">
+                <div
+                    class="flex items-center justify-between gap-3"
+                >
 
-                    <div class="flex items-center gap-2">
+                    <div
+                        class="flex items-center gap-2"
+                    >
 
                         <span
                             class="w-2 h-2 rounded-full bg-brand-600"
@@ -1475,7 +1700,7 @@ MAIN
                         <?php for ($i = 0; $i < 5; $i++): ?>
 
                             <i
-                                class="fa-solid fa-star text-[11px]"
+                                class="bi bi-star-fill text-[11px]"
                             ></i>
 
                         <?php endfor; ?>
@@ -1608,7 +1833,7 @@ MAIN
                                         class="color-check absolute inset-0 flex items-center justify-center text-white text-[10px]"
                                     >
 
-                                        <i class="fa-solid fa-check"></i>
+                                        <i style="font-size :20px;" class="bi bi-check"></i>
 
                                     </span>
 
@@ -1623,7 +1848,7 @@ MAIN
                 </div>
 
 
-                <!-- QUANTITY + ADD TO CART -->
+                <!-- QUANTITY + CART -->
 
                 <div
                     class="mt-6 sm:mt-7 grid grid-cols-[108px_minmax(0,1fr)] sm:grid-cols-[120px_minmax(0,1fr)] gap-2.5 sm:gap-3"
@@ -1640,10 +1865,11 @@ MAIN
                         >
 
                             <i
-                                class="fa-solid fa-minus text-[9px]"
+                                class="bi bi-dash text-[20px]"
                             ></i>
 
                         </button>
+
 
 
                         <span
@@ -1661,7 +1887,7 @@ MAIN
                         >
 
                             <i
-                                class="fa-solid fa-plus text-[9px]"
+                                class="bi bi-plus text-[20px]"
                             ></i>
 
                         </button>
@@ -1675,7 +1901,7 @@ MAIN
                         class="shine-button h-[54px] sm:h-[56px] rounded-xl sm:rounded-2xl bg-brand-700 hover:bg-brand-800 text-white font-black text-[11px] sm:text-sm shadow-lg shadow-brand-700/20 transition active:scale-[.98] flex items-center justify-center gap-2 sm:gap-3"
                     >
 
-                        <i class="fa-solid fa-bag-shopping"></i>
+                        <i class="bi bi-bag"></i>
 
                         <span>
                             إضافة إلى السلة
@@ -1709,7 +1935,7 @@ MAIN
                             class="w-9 h-9 sm:w-10 sm:h-10 flex-none rounded-xl bg-white text-brand-700 flex items-center justify-center"
                         >
 
-                            <i class="fa-solid fa-truck-fast"></i>
+                            <i class="bi bi-truck"></i>
 
                         </div>
 
@@ -1742,11 +1968,11 @@ MAIN
                 >
 
                     <div
-                        class="benefit-item rounded-xl sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
+                        class="benefit-card benefit-item rounded-xl sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
                     >
 
                         <i
-                            class="fa-solid fa-shield-halved text-brand-700 text-xs sm:text-sm"
+                            class="bi bi-shield-check text-brand-700 text-xs sm:text-sm"
                         ></i>
 
                         <div
@@ -1759,11 +1985,11 @@ MAIN
 
 
                     <div
-                        class="benefit-item rounded-xl sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
+                        class="benefit-card benefit-item rounded-xl sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
                     >
 
                         <i
-                            class="fa-solid fa-rotate-left text-brand-700 text-xs sm:text-sm"
+                            class="bi bi-arrow-counterclockwise text-brand-700 text-xs sm:text-sm"
                         ></i>
 
                         <div
@@ -1776,11 +2002,11 @@ MAIN
 
 
                     <div
-                        class="benefit-item rounded-xl sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
+                        class="benefit-card benefit-item rounded-xl sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
                     >
 
                         <i
-                            class="fa-solid fa-lock text-brand-700 text-xs sm:text-sm"
+                            class="bi bi-lock text-brand-700 text-xs sm:text-sm"
                         ></i>
 
                         <div
@@ -1812,8 +2038,9 @@ MAIN
                         عن المنتج
                     </h2>
 
+
                     <i
-                        class="fa-solid fa-feather-pointed text-brand-600"
+                        class="bi bi-feather text-brand-600"
                     ></i>
 
                 </div>
@@ -1841,7 +2068,7 @@ MAIN
     <section class="mt-12 sm:mt-20 lg:mt-24">
 
         <div
-            class="rounded-[24px] sm:rounded-[32px] bg-slate-950 text-white overflow-hidden relative"
+            class="rounded-[24px] sm:rounded-[32px] bg-slate-950 text-white overflow-hidden relative shadow-floating"
         >
 
             <div
@@ -1862,13 +2089,17 @@ MAIN
                     class="p-6 sm:p-8 lg:p-9 border-b md:border-b-0 md:border-l border-white/10"
                 >
 
-                    <i class="fa-solid fa-gem text-brand-300"></i>
+                    <i
+                        class="bi bi-gem text-brand-300 text-xl"
+                    ></i>
+
 
                     <h3
                         class="text-sm font-black mt-4"
                     >
                         خامات فاخرة
                     </h3>
+
 
                     <p
                         class="text-[11px] sm:text-xs text-white/45 leading-6 mt-2"
@@ -1883,13 +2114,17 @@ MAIN
                     class="p-6 sm:p-8 lg:p-9 border-b md:border-b-0 md:border-l border-white/10"
                 >
 
-                    <i class="fa-solid fa-hands text-brand-300"></i>
+                    <i
+                        class="bi bi-hand-index-thumb text-brand-300 text-xl"
+                    ></i>
+
 
                     <h3
                         class="text-sm font-black mt-4"
                     >
                         صناعة بحب
                     </h3>
+
 
                     <p
                         class="text-[11px] sm:text-xs text-white/45 leading-6 mt-2"
@@ -1904,13 +2139,17 @@ MAIN
                     class="p-6 sm:p-8 lg:p-9"
                 >
 
-                    <i class="fa-solid fa-headset text-brand-300"></i>
+                    <i
+                        class="bi bi-headset text-brand-300 text-xl"
+                    ></i>
+
 
                     <h3
                         class="text-sm font-black mt-4"
                     >
                         خدمة مميزة
                     </h3>
+
 
                     <p
                         class="text-[11px] sm:text-xs text-white/45 leading-6 mt-2"
@@ -1936,7 +2175,7 @@ CART OVERLAY
 <div
     id="drawer-overlay"
     onclick="closeCart()"
-    class="drawer-overlay fixed inset-0 bg-slate-950/40 backdrop-blur-[2px] z-[90]"
+    class="drawer-overlay fixed inset-0 bg-slate-950/40 backdrop-blur-[3px] z-[90]"
 ></div>
 
 
@@ -1977,7 +2216,7 @@ CART DRAWER
             class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-700 transition"
         >
 
-            <i class="fa-solid fa-xmark"></i>
+            <i class="bi bi-x-lg"></i>
 
         </button>
 
@@ -2002,7 +2241,7 @@ CART DRAWER
                 class="w-20 h-20 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center text-2xl"
             >
 
-                <i class="fa-solid fa-bag-shopping"></i>
+                <i class="bi bi-bag"></i>
 
             </div>
 
@@ -2084,7 +2323,7 @@ CART DRAWER
                                 class="w-7 h-7 rounded-lg hover:bg-white flex items-center justify-center"
                             >
 
-                                <i class="fa-solid fa-minus text-[8px]"></i>
+                                <i class="bi bi-dash text-[10px]"></i>
 
                             </button>
 
@@ -2103,7 +2342,7 @@ CART DRAWER
                                 class="w-7 h-7 rounded-lg hover:bg-white flex items-center justify-center"
                             >
 
-                                <i class="fa-solid fa-plus text-[8px]"></i>
+                                <i class="bi bi-plus text-[10px]"></i>
 
                             </button>
 
@@ -2140,8 +2379,11 @@ CART DRAWER
                 id="cart-subtotal"
                 class="text-slate-950"
             >
+
                 <?= number_format($productPrice) ?>
+
                 ج.م
+
             </strong>
 
         </div>
@@ -2154,6 +2396,7 @@ CART DRAWER
             <span class="text-slate-400">
                 التوصيل
             </span>
+
 
             <span
                 class="text-emerald-600 font-bold"
@@ -2191,7 +2434,7 @@ IMAGE VIEWER
         class="absolute top-3 right-3 sm:top-5 sm:right-5 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition z-10"
     >
 
-        <i class="fa-solid fa-xmark"></i>
+        <i class="bi bi-x-lg"></i>
 
     </button>
 
@@ -2219,7 +2462,7 @@ TOAST
         class="w-7 h-7 rounded-full bg-emerald-500 flex items-center justify-center flex-none"
     >
 
-        <i class="fa-solid fa-check text-[10px]"></i>
+        <i class="bi bi-check text-[12px]"></i>
 
     </span>
 
@@ -2251,6 +2494,7 @@ MOBILE BUY BAR
             >
                 السعر
             </div>
+
 
             <div
                 class="text-sm sm:text-base font-black text-slate-950 truncate"
@@ -2379,7 +2623,7 @@ JAVASCRIPT
 
 
         check.innerHTML =
-            '<i class="fa-solid fa-check"></i>';
+            '<i class="bi bi-check"></i>';
 
 
         element.appendChild(check);
@@ -2475,6 +2719,7 @@ JAVASCRIPT
         if (cartCount > 0) {
 
             cartCount = currentQty;
+
 
             document.getElementById(
                 "cart-count"
@@ -2737,26 +2982,26 @@ JAVASCRIPT
 
         if (
             icon.classList.contains(
-                "fa-regular"
+                "bi-heart"
             )
         ) {
 
             icon.classList.remove(
-                "fa-regular"
+                "bi-heart"
             );
 
             icon.classList.add(
-                "fa-solid"
+                "bi-heart-fill"
             );
 
         } else {
 
             icon.classList.remove(
-                "fa-solid"
+                "bi-heart-fill"
             );
 
             icon.classList.add(
-                "fa-regular"
+                "bi-heart"
             );
 
         }
