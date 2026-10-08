@@ -1929,7 +1929,7 @@ MAIN
                 <!-- BENEFITS -->
 
                 <div
-                    class="benefits-grid grid grid-cols-3 gap-2 mt-4"
+                    class="benefits-grid grid grid-cols-2 gap-2 mt-4"
                 >
 
                     <div
