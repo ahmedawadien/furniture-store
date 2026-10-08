@@ -2,10 +2,10 @@ FROM dunglas/frankenphp:php8.4-alpine
 
 WORKDIR /app
 
-COPY . /app
+COPY . .
 
-ENV SERVER_NAME=:80
+RUN chmod -R 755 /app
 
 EXPOSE 80
 
-CMD ["frankenphp", "run", "--config", "/etc/caddy/Caddyfile"]
+CMD ["frankenphp", "run", "--config", "/app/Caddyfile", "--adapter", "caddyfile"]
