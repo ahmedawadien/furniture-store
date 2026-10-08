@@ -191,7 +191,7 @@ $gallery = [
             font-family: "adobe_arabic";
 
             src:
-                url("assets/fonts/DigitalKhatt-OldMadina.otf")
+                url("assets/fonts/ArabicUIDisplay.otf")
                 format("opentype");
 
             font-weight: 400;
