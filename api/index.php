@@ -437,119 +437,84 @@ $gallery = [
         }
 
 
-        /* =====================================================
-        MODERN GALLERY
-        ====================================================== */
+       
+/* =====================================================
+   MODERN GALLERY
+===================================================== */
 
-        .gallery-wrapper {
+.gallery-wrapper {
+    position: relative;
+}
 
-            position: relative;
+.gallery-container {
+    position: relative;
+    width: 100%;
+    min-height: 580px;
 
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    overflow: hidden;
 
-        .gallery-container {
+    /* NO BACKGROUND UNDER IMAGE */
+    background: transparent;
 
-            position: relative;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
 
-            width: 100%;
+/* Remove decorative background glow */
+.gallery-container::before {
+    display: none;
+}
 
-            min-height: 580px;
+/* =====================================================
+   MAIN PRODUCT IMAGE
+===================================================== */
 
-            display: flex;
+.gallery-image {
+    position: relative;
+    z-index: 2;
 
-            align-items: center;
+    width: 88%;
+    height: 88%;
 
-            justify-content: center;
+    max-width: 760px;
+    max-height: 620px;
 
-            overflow: hidden;
+    object-fit: contain;
+    object-position: center;
 
-            background:
+    display: block;
+    margin: auto;
 
-                radial-gradient(
-                    circle at center,
-                    rgba(255,255,255,.98),
-                    rgba(247,246,242,.65)
-                );
+    /* Image itself */
+    background: #ffffff;
 
-            border:
-                1px solid
-                rgba(226,232,240,.72);
+    border: 1px solid rgba(15, 23, 42, 0.10);
 
-            border-radius:
-                34px;
+    border-radius: 20px;
 
-            box-shadow:
-                0 30px 90px
-                rgba(15,23,42,.06);
+    box-shadow:
+        0 15px 45px rgba(15, 23, 42, 0.06);
 
-        }
+    transition:
+        transform .55s cubic-bezier(.22,.61,.36,1),
+        opacity .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
 
+.gallery-image:hover {
+    transform: scale(1.015);
 
-        .gallery-container::before {
+    border-color: rgba(149, 96, 41, 0.25);
 
-            content: "";
-
-            position: absolute;
-
-            width: 420px;
-
-            height: 420px;
-
-            border-radius: 999px;
-
-            background:
-                rgba(231,213,181,.22);
-
-            filter:
-                blur(70px);
-
-            pointer-events: none;
-
-        }
-
-
-        .gallery-image {
-
-            position: relative;
-
-            z-index: 2;
-
-            width: 88%;
-
-            height: 88%;
-
-            max-width: 760px;
-
-            max-height: 620px;
-
-            object-fit: contain;
-
-            object-position: center;
-
-            display: block;
-
-            margin: auto;
-
-            border-radius: 0;
-
-            box-shadow: none;
-
-            background: transparent;
-
-            transition:
-                transform .55s cubic-bezier(.22,.61,.36,1),
-                opacity .3s ease;
-
-        }
-
-
-        .gallery-image:hover {
-
-            transform:
-                scale(1.025);
-
-        }
+    box-shadow:
+        0 20px 55px rgba(15, 23, 42, 0.09);
+}
 
 
         /* =====================================================
@@ -1833,7 +1798,7 @@ MAIN
                                         class="color-check absolute inset-0 flex items-center justify-center text-white text-[10px]"
                                     >
 
-                                        <i style="font-size :20px;" class="bi bi-check"></i>
+                                        <i style="font-size :20px;" class="bi bi-check text-[20px]"></i>
 
                                     </span>
 
@@ -2619,7 +2584,7 @@ JAVASCRIPT
 
 
         check.className =
-            "color-check absolute inset-0 flex items-center justify-center text-white text-[10px]";
+            "color-check absolute inset-0 flex items-center justify-center text-white text-[20px]";
 
 
         check.innerHTML =
