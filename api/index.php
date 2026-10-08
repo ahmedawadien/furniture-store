@@ -201,7 +201,20 @@ $gallery = [
             font-display: swap;
 
         }
+.lock-icon {
+    filter: brightness(0) saturate(100%)
+            invert(32%)
+            sepia(18%)
+            saturate(1250%)
+            hue-rotate(355deg)
+            brightness(100%)
+            contrast(100%);
+}
 
+.benefit-card:hover .lock-icon {
+    filter: brightness(0) invert(1);
+    transform: scale(1.1);
+}
 
         /* =====================================================
         RESET
@@ -1509,87 +1522,277 @@ MAIN
 
             <!-- BENEFITS -->
 
+<div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5 mt-6">
+
+    <!-- Safe Delivery -->
+    <div
+        class="modern-benefit-card h-fit group relative overflow-hidden
+               bg-white rounded-[28px]
+               border border-slate-200/80
+               px-6 pt-4
+               text-center
+               shadow-[0_12px_35px_rgba(15,23,42,.05)]
+               transition-all duration-500
+               hover:-translate-y-2
+               hover:shadow-[0_25px_60px_rgba(61,36,18,.12)]"
+    >
+
+        <!-- Decorative bottom shape -->
+        <div
+            class="absolute -bottom-16 -right-12
+                   w-36 h-36
+                   rounded-full
+                   bg-brand-50
+                   opacity-80
+                   transition-transform duration-500
+                   group-hover:scale-125"
+        ></div>
+
+        <!-- Top accent -->
+        <div
+            class="absolute top-0 left-1/2
+                   -translate-x-1/2
+                   w-10 h-1
+                   rounded-b-full
+                   bg-brand-500
+                   transition-all duration-500
+                   group-hover:w-20"
+        ></div>
+
+        <!-- Icon -->
+        <div
+            class="relative z-10 mx-auto
+                   flex items-center justify-center
+                   w-12 h-12
+                   rounded-full
+                   bg-gradient-to-br from-brand-50 to-[#fdf9f4]
+                   border border-brand-100
+                   transition-all duration-500
+                   group-hover:scale-105
+                   group-hover:border-brand-200"
+        >
+            <i
+                class="bi bi-truck text-[20px] text-brand-500
+                       transition-transform duration-500
+                       group-hover:scale-110"
+            ></i>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 mt-5">
+
             <div
-                class="hidden md:grid grid-cols-3 gap-3 mt-5"
+                class="text-lg font-black
+                       text-slate-900
+                       tracking-tight"
             >
+                توصيل آمن
+            </div>
 
-                <div
-                    class="benefit-card bg-white rounded-2xl border border-slate-200/70 p-4"
-                >
+            <div
+                class="text-sm
+                       text-slate-400
+                       font-medium
+                       mt-2"
+            >
+                تغليف احترافي
+            </div>
 
-                    <i
-                        class="bi bi-truck text-brand-600 text-lg"
-                    ></i>
+        </div>
 
-                    <div class="mt-3">
+        <!-- Bottom line -->
+        <div
+            class="relative z-10
+                   mx-auto mt-4
+                   w-10 h-1
+                   rounded-full
+                   bg-brand-500
+                   transition-all duration-500
+                   group-hover:w-16"
+        ></div>
 
-                        <div
-                            class="text-xs font-black text-slate-900"
-                        >
-                            توصيل آمن
-                        </div>
-
-                        <div
-                            class="text-[10px] text-slate-400 mt-1"
-                        >
-                            تغليف احترافي
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="benefit-card bg-white rounded-2xl border border-slate-200/70 p-4"
-                >
-
-                    <i
-                        class="bi bi-shield-check text-brand-600 text-lg"
-                    ></i>
-
-                    <div class="mt-3">
-
-                        <div
-                            class="text-xs font-black text-slate-900"
-                        >
-                            ضمان موثوق
-                        </div>
-
-                        <div
-                            class="text-[10px] text-slate-400 mt-1"
-                        >
-                            حتى 10 سنوات
-                        </div>
-
-                    </div>
-
-                </div>
+    </div>
 
 
-                <div
-                    class="benefit-card bg-white rounded-2xl border border-slate-200/70 p-4"
-                >
+    <!-- Trusted Warranty -->
+    <div
+        class="modern-benefit-card h-fit group relative overflow-hidden
+               bg-white rounded-[28px]
+               border border-slate-200/80
+               px-6 pt-4
+               text-center
+               shadow-[0_12px_35px_rgba(15,23,42,.05)]
+               transition-all duration-500
+               hover:-translate-y-2
+               hover:shadow-[0_25px_60px_rgba(61,36,18,.12)]"
+    >
 
-                    <i
-                        class="bi bi-stars text-brand-600 text-lg"
-                    ></i>
+        <!-- Decorative bottom shape -->
+        <div
+            class="absolute -bottom-16 -right-12
+                   w-36 h-36
+                   rounded-full
+                   bg-brand-50
+                   opacity-80
+                   transition-transform duration-500
+                   group-hover:scale-125"
+        ></div>
 
-                    <div class="mt-3">
+        <!-- Top accent -->
+        <div
+            class="absolute top-0 left-1/2
+                   -translate-x-1/2
+                   w-10 h-1
+                   rounded-b-full
+                   bg-brand-500
+                   transition-all duration-500
+                   group-hover:w-20"
+        ></div>
 
-                        <div
-                            class="text-xs font-black text-slate-900"
-                        >
-                            صناعة يدوية
-                        </div>
+        <!-- Icon -->
+        <div
+            class="relative z-10 mx-auto
+                   flex items-center justify-center
+                   w-12 h-12
+                   rounded-full
+                   bg-gradient-to-br from-brand-50 to-[#fdf9f4]
+                   border border-brand-100
+                   transition-all duration-500
+                   group-hover:scale-105
+                   group-hover:border-brand-200"
+        >
+            <i
+                class="bi bi-shield-check text-[20px] text-brand-500
+                       transition-transform duration-500
+                       group-hover:scale-110"
+            ></i>
+        </div>
 
-                        <div
-                            class="text-[10px] text-slate-400 mt-1"
-                        >
-                            عناية بكل التفاصيل
-                        </div>
+        <!-- Content -->
+        <div class="relative z-10 mt-4">
 
-                    </div>
+            <div
+                class="text-lg font-black
+                       text-slate-900
+                       tracking-tight"
+            >
+                ضمان موثوق
+            </div>
+
+            <div
+                class="text-sm
+                       text-slate-400
+                       font-medium
+                       mt-2"
+            >
+                حتى 10 سنوات
+            </div>
+
+        </div>
+
+        <!-- Bottom line -->
+        <div
+            class="relative z-10
+                   mx-auto mt-4
+                   w-10 h-1
+                   rounded-full
+                   bg-brand-500
+                   transition-all duration-500
+                   group-hover:w-16"
+        ></div>
+
+    </div>
+
+
+    <!-- Handmade -->
+    <div
+        class="modern-benefit-card h-fit group relative overflow-hidden
+               bg-white rounded-[28px]
+               border border-slate-200/80
+               px-6 pt-4
+               text-center
+               shadow-[0_12px_35px_rgba(15,23,42,.05)]
+               transition-all duration-500
+               hover:-translate-y-2
+               hover:shadow-[0_25px_60px_rgba(61,36,18,.12)]"
+    >
+
+        <!-- Decorative bottom shape -->
+        <div
+            class="absolute -bottom-16 -right-12
+                   w-36 h-36
+                   rounded-full
+                   bg-brand-50
+                   opacity-80
+                   transition-transform duration-500
+                   group-hover:scale-125"
+        ></div>
+
+        <!-- Top accent -->
+        <div
+            class="absolute top-0 left-1/2
+                   -translate-x-1/2
+                   w-10 h-1
+                   rounded-b-full
+                   bg-brand-500
+                   transition-all duration-500
+                   group-hover:w-20"
+        ></div>
+
+        <!-- Icon -->
+        <div
+            class="relative z-10 mx-auto
+                   flex items-center justify-center
+                   w-12 h-12
+                   rounded-full
+                   bg-gradient-to-br from-brand-50 to-[#fdf9f4]
+                   border border-brand-100
+                   transition-all duration-500
+                   group-hover:scale-105
+                   group-hover:border-brand-200"
+        >
+            <i
+                class="bi bi-stars text-[20px] text-brand-500
+                       transition-transform duration-500
+                       group-hover:scale-110"
+            ></i>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 mt-4">
+
+            <div
+                class="text-lg font-black
+                       text-slate-900
+                       tracking-tight"
+            >
+                صناعة يدوية
+            </div>
+
+            <div
+                class="text-sm
+                       text-slate-400
+                       font-medium
+                       mt-2"
+            >
+                عناية بكل التفاصيل
+            </div>
+
+        </div>
+
+        <!-- Bottom line -->
+        <div
+            class="relative z-10
+                   mx-auto mt-4
+                   w-10 h-1
+                   rounded-full
+                   bg-brand-500
+                   transition-all duration-500
+                   group-hover:w-16"
+        ></div>
+
+
+
 
                 </div>
 
@@ -1934,62 +2137,182 @@ MAIN
 
                 <!-- BENEFITS -->
 
-                <div
-                    class="benefits-grid grid mx-auto grid-cols-2 sm:grid-cols-3 gap-2 mt-4"
-                >
+                <div class="benefits-grid grid mx-auto grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 mt-5">
 
-                    <div
-                        class="benefit-card benefit-item rounded-xl sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
-                    >
+    <!-- Warranty -->
+    <div
+        class="benefit-card group relative overflow-hidden rounded-2xl sm:rounded-3xl
+               bg-white border border-slate-200/70
+               p-3 sm:p-4 text-center
+               shadow-[0_8px_30px_rgba(15,23,42,.04)]
+               transition-all duration-300
+               hover:-translate-y-1
+               hover:border-brand-200
+               hover:shadow-[0_15px_40px_rgba(61,36,18,.10)]"
+    >
 
-                        <i
-                            class="bi bi-shield-check text-brand-700 text-xs sm:text-sm"
-                        ></i>
+        <!-- Accent -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2
+                   w-10 sm:w-12 h-1
+                   rounded-b-full bg-brand-700
+                   opacity-70 group-hover:w-16 transition-all duration-300"
+        ></div>
 
-                        <div
-                            class="mt-2 text-[9px] sm:text-[10px] font-black text-slate-800"
-                        >
-                            ضمان 10 سنوات
-                        </div>
+        <!-- Icon -->
+        <div
+            class="mx-auto flex items-center justify-center
+                   w-10 h-10 sm:w-12 sm:h-12
+                   rounded-xl sm:rounded-2xl
+                   bg-brand-50
+                   border border-brand-100
+                   transition-all duration-300
+                   group-hover:bg-brand-700
+                   group-hover:border-brand-700"
+        >
+            <i
+                class="bi bi-shield-check text-brand-700 text-lg sm:text-xl
+                       group-hover:text-white transition-colors duration-300"
+            ></i>
+        </div>
 
-                    </div>
+        <!-- Text -->
+        <div
+            class="mt-2.5 sm:mt-3
+                   text-[10px] sm:text-xs
+                   font-black text-slate-800"
+        >
+            ضمان 10 سنوات
+        </div>
+
+        <div
+            class="mt-1 text-[8px] sm:text-[9px]
+                   font-semibold text-slate-400"
+        >
+            جودة موثوقة
+        </div>
+
+    </div>
 
 
-                    <div
-                        class="benefit-card benefit-item rounded-xl sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
-                    >
+    <!-- Return -->
+    <div
+        class="benefit-card group relative overflow-hidden rounded-2xl sm:rounded-3xl
+               bg-white border border-slate-200/70
+               p-3 sm:p-4 text-center
+               shadow-[0_8px_30px_rgba(15,23,42,.04)]
+               transition-all duration-300
+               hover:-translate-y-1
+               hover:border-brand-200
+               hover:shadow-[0_15px_40px_rgba(61,36,18,.10)]"
+    >
 
-                        <i
-                            class="bi bi-arrow-counterclockwise text-brand-700 text-xs sm:text-sm"
-                        ></i>
+        <!-- Accent -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2
+                   w-10 sm:w-12 h-1
+                   rounded-b-full bg-brand-700
+                   opacity-70 group-hover:w-16 transition-all duration-300"
+        ></div>
 
-                        <div
-                            class="mt-2 text-[9px] sm:text-[10px] font-black text-slate-800"
-                        >
-                            إرجاع 14 يوم
-                        </div>
+        <!-- Icon -->
+        <div
+            class="mx-auto flex items-center justify-center
+                   w-10 h-10 sm:w-12 sm:h-12
+                   rounded-xl sm:rounded-2xl
+                   bg-brand-50
+                   border border-brand-100
+                   transition-all duration-300
+                   group-hover:bg-brand-700
+                   group-hover:border-brand-700"
+        >
+            <i
+                class="bi bi-arrow-counterclockwise text-brand-700 text-lg sm:text-xl
+                       group-hover:text-white transition-colors duration-300"
+            ></i>
+        </div>
 
-                    </div>
+        <!-- Text -->
+        <div
+            class="mt-2.5 sm:mt-3
+                   text-[10px] sm:text-xs
+                   font-black text-slate-800"
+        >
+            إرجاع 14 يوم
+        </div>
+
+        <div
+            class="mt-1 text-[8px] sm:text-[9px]
+                   font-semibold text-slate-400"
+        >
+            تجربة بدون قلق
+        </div>
+
+    </div>
 
 
-                    <div
-                        class="benefit-card benefit-item rounded-xl justify-center sm:rounded-2xl bg-white border border-slate-200/70 p-2.5 sm:p-3 text-center"
-                    >
+    <!-- Secure Payment -->
+    <div
+        class="benefit-card group relative overflow-hidden rounded-2xl sm:rounded-3xl
+               bg-white border border-slate-200/70
+               p-3 sm:p-4 text-center
+               shadow-[0_8px_30px_rgba(15,23,42,.04)]
+               transition-all duration-300
+               hover:-translate-y-1
+               hover:border-brand-200
+               hover:shadow-[0_15px_40px_rgba(61,36,18,.10)]
+               col-span-2 sm:col-span-1
+               justify-self-center w-[50%] sm:w-full"
+    >
 
-                        <img
-    src="../assets/icons/lock-outline.svg"
-    class="w-5 h-5 mx-auto object-contain"
-/>
+        <!-- Accent -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2
+                   w-10 sm:w-12 h-1
+                   rounded-b-full bg-brand-700
+                   opacity-70 group-hover:w-16 transition-all duration-300"
+        ></div>
 
-                        <div
-                            class="mt-2 text-[9px] sm:text-[10px] font-black text-slate-800"
-                        >
-                            دفع آمن
-                        </div>
+        <!-- Icon -->
+        <div
+            class="mx-auto flex items-center justify-center
+                   w-10 h-10 sm:w-12 sm:h-12
+                   rounded-xl sm:rounded-2xl
+                   bg-brand-50
+                   border border-brand-100
+                   transition-all duration-300
+                   group-hover:bg-brand-700
+                   group-hover:border-brand-700"
+        >
+            <img
+                src="../assets/icons/lock-outline.svg"
+                alt="دفع آمن"
+                class="lock-icon w-5 h-5 sm:w-6 sm:h-6
+                       object-contain
+                       transition-transform duration-300
+                       group-hover:scale-110"
+            />
+        </div>
 
-                    </div>
+        <!-- Text -->
+        <div
+            class="mt-2.5 sm:mt-3
+                   text-[10px] sm:text-xs
+                   font-black text-slate-800"
+        >
+            دفع آمن
+        </div>
 
-                </div>
+        <div
+            class="mt-1 text-[8px] sm:text-[9px]
+                   font-semibold text-slate-400"
+        >
+            حماية كاملة
+        </div>
+
+    </div>
+
+</div>
 
             </div>
 
