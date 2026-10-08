@@ -515,7 +515,13 @@ $gallery = [
     box-shadow:
         0 20px 55px rgba(15, 23, 42, 0.09);
 }
-
+@media (max-width: 640px) {
+    .benefits-grid > :last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 0.25rem);
+    }
+}
 
         /* =====================================================
         IMAGE TOP CONTROLS
@@ -1929,7 +1935,7 @@ MAIN
                 <!-- BENEFITS -->
 
                 <div
-                    class="benefits-grid grid grid-cols-2 gap-2 mt-4"
+                    class="benefits-grid grid mx-auto grid-cols-2 sm:grid-cols-3 gap-2 mt-4"
                 >
 
                     <div
