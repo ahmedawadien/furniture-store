@@ -657,7 +657,7 @@ $gallery = [
                 ];
                 foreach ($galleryBenefits as $benefit):
                 ?>
-                    <div class="modern-benefit-card h-fit group relative overflow-hidden  bg-white rounded-[28px] border border-slate-200/80 px-4 sm:px-6 pt-4 pb-5 text-center shadow-[0_12px_35px_rgba(15,23,42,.05)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(61,36,18,.12)]">
+                    <div class="modern-benefit-card h-fit group relative overflow-hidden  bg-white rounded-[28px] border border-slate-200/80 px-4 sm:px-6 pt-4 text-center shadow-[0_12px_35px_rgba(15,23,42,.05)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(61,36,18,.12)]">
                         <div class="absolute -bottom-16 -right-12 w-36 h-36 rounded-full bg-brand-50 opacity-80 transition-transform duration-500 group-hover:scale-125"></div>
                         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-1 rounded-b-full bg-brand-500 transition-all duration-500 group-hover:w-20"></div>
                         <div class="relative z-10 mx-auto flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-brand-50 to-[#fdf9f4] border border-brand-100 transition-all duration-500 group-hover:scale-105 group-hover:border-brand-200">
