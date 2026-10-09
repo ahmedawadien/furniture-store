@@ -2071,11 +2071,11 @@ MAIN
                         class="shine-button h-[54px] sm:h-[56px] rounded-xl sm:rounded-2xl bg-brand-700 hover:bg-brand-800 text-white font-black text-[11px] sm:text-sm shadow-lg shadow-brand-700/20 transition active:scale-[.98] flex items-center justify-center gap-2 sm:gap-3"
                     >
 
-                        <i class="bi bi-bag"></i>
-
-                        <span>
-                            إضافة إلى السلة
-                        </span>
+                    
+                    <span>
+                        إضافة إلى السلة
+                    </span>
+                    <i class="bi bi-bag"></i>
 
                     </button>
 
