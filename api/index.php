@@ -935,8 +935,13 @@ $gallery = [
             <span class="text-slate-400">التوصيل</span>
             <span class="text-emerald-600 font-bold">مجاني</span>
         </div>
-        <button type="button" class="w-full h-14 mt-5 rounded-xl sm:rounded-2xl bg-brand-700 hover:bg-brand-800 text-white font-black text-xs sm:text-sm transition">إتمام الطلب</button>
-    </div>
+<button
+    type="button"
+    onclick="checkoutNow()"
+    class="w-full h-14 mt-5 rounded-xl sm:rounded-2xl bg-brand-700 hover:bg-brand-800 text-white font-black text-xs sm:text-sm transition"
+>
+    إتمام الطلب
+</button>    </div>
 </aside>
 
 <!-- IMAGE VIEWER -->
@@ -1076,7 +1081,19 @@ $gallery = [
 
         document.getElementById("drawer-qty").innerText = currentQty;
     }
+function checkoutNow() {
+    if (cartCount <= 0) {
+        showToast("أضف المنتج إلى السلة أولاً");
+        return;
+    }
 
+    const params = new URLSearchParams({
+        quantity: currentQty,
+        color: currentColor
+    });
+
+    window.location.href = "checkout.php?" + params.toString();
+}
     function openCart() {
         updateCartSummary();
         document.getElementById("cart-drawer").classList.add("active");
