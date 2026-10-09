@@ -1092,7 +1092,7 @@ function checkoutNow() {
         color: currentColor
     });
 
-    window.location.href = "checkout.php?" + params.toString();
+    window.location.href = "/api/checkout.php?" + params.toString();
 }
     function openCart() {
         updateCartSummary();
